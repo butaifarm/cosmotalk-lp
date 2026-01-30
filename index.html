@@ -302,10 +302,6 @@
 <span class="text-sm text-[#0d121b] dark:text-white">見積もり依頼</span>
 </label>
 <label class="flex items-center gap-3 p-3 rounded-lg border border-[#cfd7e7] dark:border-gray-600 hover:border-primary cursor-pointer transition-colors">
-<input type="checkbox" name="inquiry_items" value="デモ・お試し希望" class="w-4 h-4 rounded text-primary border-[#cfd7e7] focus:ring-primary"/>
-<span class="text-sm text-[#0d121b] dark:text-white">デモ・お試し希望</span>
-</label>
-<label class="flex items-center gap-3 p-3 rounded-lg border border-[#cfd7e7] dark:border-gray-600 hover:border-primary cursor-pointer transition-colors">
 <input type="checkbox" name="inquiry_items" value="その他" class="w-4 h-4 rounded text-primary border-[#cfd7e7] focus:ring-primary"/>
 <span class="text-sm text-[#0d121b] dark:text-white">その他</span>
 </label>
@@ -414,6 +410,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         body: JSON.stringify(data)
     })
     .then(function() {
+        if (items.indexOf('資料請求') !== -1) {
+            window.location.href = 'download.html';
+            return;
+        }
         status.innerHTML = '<div class="flex flex-col items-center gap-2"><span class="material-symbols-outlined text-green-600 text-3xl">check_circle</span><p class="font-bold text-green-700">送信完了</p><p class="text-green-600 text-xs">お問い合わせありがとうございます。担当者より2営業日以内にご連絡いたします。</p></div>';
         status.className = 'text-center py-5 rounded-lg bg-green-50 border border-green-200';
         document.getElementById('contactForm').reset();

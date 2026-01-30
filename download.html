@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>資料ダウンロード - コスモトーク</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#135bec",
+                    "background-light": "#f6f6f8",
+                    "background-dark": "#101622",
+                },
+                fontFamily: {
+                    "display": ["Space Grotesk", "Noto Sans JP", "sans-serif"],
+                    "body": ["Noto Sans JP", "Noto Sans", "sans-serif"],
+                },
+            },
+        },
+    }
+</script>
+<style>
+    body { font-family: "Noto Sans JP", "Noto Sans", sans-serif; }
+    h1, h2, h3, h4, h5, h6, .font-display { font-family: "Space Grotesk", "Noto Sans JP", sans-serif; }
+</style>
+</head>
+<body class="bg-background-light text-[#0d121b] min-h-screen flex flex-col">
+<!-- Navbar -->
+<nav class="sticky top-0 z-50 w-full bg-[#f8f9fc]/90 backdrop-blur-md border-b border-[#e7ebf3]">
+<div class="px-4 md:px-10 py-3 flex items-center justify-between max-w-[1200px] mx-auto">
+<a href="index.html" class="flex items-center gap-2 md:gap-4 text-[#0d121b] min-w-0">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">rss_feed</span>
+</div>
+<h2 class="text-sm md:text-xl font-bold leading-tight tracking-[-0.015em] font-display whitespace-normal">多言語同時翻訳IP無線機</h2>
+</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 flex items-center justify-center px-4 py-16">
+<div class="max-w-[600px] w-full text-center">
+<div class="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-gray-100">
+<div class="flex flex-col items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-600 text-4xl">check_circle</span>
+</div>
+<div>
+<h1 class="text-2xl md:text-3xl font-bold text-[#0d121b] mb-3 font-display">お問い合わせありがとうございます</h1>
+<p class="text-[#4c669a] text-sm leading-relaxed">担当者より2営業日以内にご連絡いたします。<br/>下記ボタンより資料をダウンロードいただけます。</p>
+</div>
+<a href="cosmotalk_catalog.pdf" download class="inline-flex items-center justify-center gap-2 rounded-lg h-14 px-8 bg-primary hover:bg-blue-600 transition-all text-white text-base font-bold shadow-lg hover:shadow-primary/50">
+<span class="material-symbols-outlined text-xl">download</span>
+<span>資料をダウンロード</span>
+</a>
+<a href="index.html" class="text-sm text-[#4c669a] hover:text-primary transition-colors underline">トップページに戻る</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0b0f17] text-white py-8 px-4 md:px-10 border-t border-gray-800">
+<div class="max-w-[1200px] mx-auto text-center text-xs text-gray-500">
+&copy; 2025 コスモトーク. All rights reserved.
+</div>
+</footer>
+</body></html>
