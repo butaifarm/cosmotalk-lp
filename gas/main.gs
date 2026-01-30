@@ -24,18 +24,17 @@ function setup() {
     sheet = ss.insertSheet(SHEET_NAME);
   }
 
-  var headers = ["受信日時", "種別", "氏名", "会社名", "メールアドレス", "電話番号", "お問い合わせ内容"];
+  var headers = ["受信日時", "ご希望内容", "氏名", "会社名", "メールアドレス", "電話番号"];
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
   sheet.getRange(1, 1, 1, headers.length).setFontWeight("bold");
   sheet.setFrozenRows(1);
 
   sheet.setColumnWidth(1, 160);
-  sheet.setColumnWidth(2, 120);
+  sheet.setColumnWidth(2, 280);
   sheet.setColumnWidth(3, 120);
   sheet.setColumnWidth(4, 180);
   sheet.setColumnWidth(5, 220);
   sheet.setColumnWidth(6, 140);
-  sheet.setColumnWidth(7, 400);
 }
 
 /**
@@ -80,7 +79,7 @@ function writeToSheet(timestamp, inquiryType, name, company, email, phone, messa
   }
 
   var formattedDate = Utilities.formatDate(timestamp, "Asia/Tokyo", "yyyy/MM/dd HH:mm:ss");
-  sheet.appendRow([formattedDate, inquiryType, name, company, email, phone, message]);
+  sheet.appendRow([formattedDate, inquiryType, name, company, email, phone]);
 }
 
 /**
@@ -107,20 +106,19 @@ function sendSlackNotification(timestamp, inquiryType, name, company, email, pho
       },
       {
         type: "section",
+        text: {
+          type: "mrkdwn",
+          text: "*ご希望内容:*\n" + inquiryType
+        }
+      },
+      {
+        type: "section",
         fields: [
-          { type: "mrkdwn", text: "*種別:*\n" + inquiryType },
           { type: "mrkdwn", text: "*氏名:*\n" + name },
           { type: "mrkdwn", text: "*会社名:*\n" + company },
           { type: "mrkdwn", text: "*メール:*\n" + email },
           { type: "mrkdwn", text: "*電話番号:*\n" + phone }
         ]
-      },
-      {
-        type: "section",
-        text: {
-          type: "mrkdwn",
-          text: "*お問い合わせ内容:*\n" + message
-        }
       },
       {
         type: "context",

@@ -282,23 +282,31 @@
 <p class="text-[#4c669a] dark:text-gray-400">導入のご相談、お見積もり、資料請求など、お気軽にお問い合わせください。</p>
 </div>
 <form id="contactForm" class="flex flex-col gap-6">
-<div class="flex flex-col gap-2">
-<label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">お問い合わせ種別</label>
-<div class="flex flex-wrap gap-4">
-<label class="flex items-center gap-2 cursor-pointer">
-<input type="radio" name="inquiry_type" value="資料請求" class="w-4 h-4 text-primary border-[#cfd7e7] focus:ring-primary" checked/>
+<div class="flex flex-col gap-3">
+<label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">ご希望の内容（複数選択可）</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<label class="flex items-center gap-3 p-3 rounded-lg border border-[#cfd7e7] dark:border-gray-600 hover:border-primary cursor-pointer transition-colors">
+<input type="checkbox" name="inquiry_items" value="資料請求" class="w-4 h-4 rounded text-primary border-[#cfd7e7] focus:ring-primary"/>
 <span class="text-sm text-[#0d121b] dark:text-white">資料請求</span>
 </label>
-<label class="flex items-center gap-2 cursor-pointer">
-<input type="radio" name="inquiry_type" value="導入相談" class="w-4 h-4 text-primary border-[#cfd7e7] focus:ring-primary"/>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-[#cfd7e7] dark:border-gray-600 hover:border-primary cursor-pointer transition-colors">
+<input type="checkbox" name="inquiry_items" value="料金について知りたい" class="w-4 h-4 rounded text-primary border-[#cfd7e7] focus:ring-primary"/>
+<span class="text-sm text-[#0d121b] dark:text-white">料金について知りたい</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-[#cfd7e7] dark:border-gray-600 hover:border-primary cursor-pointer transition-colors">
+<input type="checkbox" name="inquiry_items" value="導入相談" class="w-4 h-4 rounded text-primary border-[#cfd7e7] focus:ring-primary"/>
 <span class="text-sm text-[#0d121b] dark:text-white">導入相談</span>
 </label>
-<label class="flex items-center gap-2 cursor-pointer">
-<input type="radio" name="inquiry_type" value="見積もり依頼" class="w-4 h-4 text-primary border-[#cfd7e7] focus:ring-primary"/>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-[#cfd7e7] dark:border-gray-600 hover:border-primary cursor-pointer transition-colors">
+<input type="checkbox" name="inquiry_items" value="見積もり依頼" class="w-4 h-4 rounded text-primary border-[#cfd7e7] focus:ring-primary"/>
 <span class="text-sm text-[#0d121b] dark:text-white">見積もり依頼</span>
 </label>
-<label class="flex items-center gap-2 cursor-pointer">
-<input type="radio" name="inquiry_type" value="その他" class="w-4 h-4 text-primary border-[#cfd7e7] focus:ring-primary"/>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-[#cfd7e7] dark:border-gray-600 hover:border-primary cursor-pointer transition-colors">
+<input type="checkbox" name="inquiry_items" value="デモ・お試し希望" class="w-4 h-4 rounded text-primary border-[#cfd7e7] focus:ring-primary"/>
+<span class="text-sm text-[#0d121b] dark:text-white">デモ・お試し希望</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-[#cfd7e7] dark:border-gray-600 hover:border-primary cursor-pointer transition-colors">
+<input type="checkbox" name="inquiry_items" value="その他" class="w-4 h-4 rounded text-primary border-[#cfd7e7] focus:ring-primary"/>
 <span class="text-sm text-[#0d121b] dark:text-white">その他</span>
 </label>
 </div>
@@ -322,10 +330,6 @@
 <label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">電話番号</label>
 <input id="formPhone" class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-transparent px-4 text-[#0d121b] dark:text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-gray-400" placeholder="03-1234-5678" type="tel"/>
 </div>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">お問い合わせ内容</label>
-<textarea id="formMessage" class="w-full rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-transparent p-4 text-[#0d121b] dark:text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none placeholder:text-gray-400" placeholder="ご質問やご要望をご記入ください..." rows="4" required></textarea>
 </div>
 <div id="formStatus" class="hidden text-center py-3 rounded-lg text-sm font-bold"></div>
 <div class="pt-4 flex justify-center">
@@ -371,7 +375,7 @@ function closeVideoModal(e) {
 <!-- Contact Form Script -->
 <script>
 // Google Apps Script WebApp URL（デプロイ後に差し替えてください）
-var GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwspmw4--LGUzuMzKvfIKCy6ds2xi8wmO5DsbmECSW6Smk1LsOLU3N60lRCacy0x3rQ/exec";
+var GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxULmnJbp5ZCms7vWMDKNSS7Nbb4JS89H4cSQj1nmsttTkz6j4bG6spY_0F2tuKyqcN/exec";
 
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -384,13 +388,23 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     btn.textContent = '送信中...';
     status.classList.add('hidden');
 
+    var checked = document.querySelectorAll('input[name="inquiry_items"]:checked');
+    if (checked.length === 0) {
+        var status = document.getElementById('formStatus');
+        status.innerHTML = '<p class="text-sm font-bold text-red-600">ご希望の内容を1つ以上選択してください。</p>';
+        status.className = 'text-center py-3 rounded-lg bg-red-50 border border-red-200';
+        btn.disabled = false;
+        btn.textContent = '送信する';
+        return;
+    }
+    var items = Array.prototype.map.call(checked, function(el) { return el.value; });
     var data = {
-        inquiry_type: document.querySelector('input[name="inquiry_type"]:checked').value,
+        inquiry_type: items.join('、'),
         name: document.getElementById('formName').value,
         company: document.getElementById('formCompany').value,
         email: document.getElementById('formEmail').value,
         phone: document.getElementById('formPhone').value,
-        message: document.getElementById('formMessage').value
+        message: ''
     };
 
     fetch(GAS_WEBAPP_URL, {
@@ -400,18 +414,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         body: JSON.stringify(data)
     })
     .then(function() {
-        var type = data.inquiry_type;
-        var msg = '';
-        if (type === '資料請求') {
-            msg = '資料請求を受け付けました。\nご登録いただいたメールアドレス宛に、資料をお送りいたします。';
-        } else if (type === '見積もり依頼') {
-            msg = 'お見積もりのご依頼を受け付けました。\n担当者より2営業日以内にご連絡いたします。';
-        } else if (type === '導入相談') {
-            msg = '導入相談のお申し込みを受け付けました。\n担当者より2営業日以内にご連絡いたします。';
-        } else {
-            msg = 'お問い合わせを受け付けました。\n担当者より2営業日以内にご連絡いたします。';
-        }
-        status.innerHTML = '<div class="flex flex-col items-center gap-2"><span class="material-symbols-outlined text-green-600 text-3xl">check_circle</span><p class="font-bold text-green-700">送信完了</p><p class="text-green-600 text-xs whitespace-pre-line">' + msg + '</p></div>';
+        status.innerHTML = '<div class="flex flex-col items-center gap-2"><span class="material-symbols-outlined text-green-600 text-3xl">check_circle</span><p class="font-bold text-green-700">送信完了</p><p class="text-green-600 text-xs">お問い合わせありがとうございます。担当者より2営業日以内にご連絡いたします。</p></div>';
         status.className = 'text-center py-5 rounded-lg bg-green-50 border border-green-200';
         document.getElementById('contactForm').reset();
     })
