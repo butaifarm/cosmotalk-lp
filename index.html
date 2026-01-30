@@ -400,14 +400,24 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         body: JSON.stringify(data)
     })
     .then(function() {
-        // no-cors ではレスポンスが読めないため、送信成功として扱う
-        status.textContent = '送信が完了しました。お問い合わせありがとうございます。';
-        status.className = 'text-center py-3 rounded-lg text-sm font-bold text-green-600 bg-green-50 border border-green-200';
+        var type = data.inquiry_type;
+        var msg = '';
+        if (type === '資料請求') {
+            msg = '資料請求を受け付けました。\nご登録いただいたメールアドレス宛に、資料をお送りいたします。';
+        } else if (type === '見積もり依頼') {
+            msg = 'お見積もりのご依頼を受け付けました。\n担当者より2営業日以内にご連絡いたします。';
+        } else if (type === '導入相談') {
+            msg = '導入相談のお申し込みを受け付けました。\n担当者より2営業日以内にご連絡いたします。';
+        } else {
+            msg = 'お問い合わせを受け付けました。\n担当者より2営業日以内にご連絡いたします。';
+        }
+        status.innerHTML = '<div class="flex flex-col items-center gap-2"><span class="material-symbols-outlined text-green-600 text-3xl">check_circle</span><p class="font-bold text-green-700">送信完了</p><p class="text-green-600 text-xs whitespace-pre-line">' + msg + '</p></div>';
+        status.className = 'text-center py-5 rounded-lg bg-green-50 border border-green-200';
         document.getElementById('contactForm').reset();
     })
     .catch(function() {
-        status.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
-        status.className = 'text-center py-3 rounded-lg text-sm font-bold text-red-600 bg-red-50 border border-red-200';
+        status.innerHTML = '<div class="flex flex-col items-center gap-2"><span class="material-symbols-outlined text-red-600 text-3xl">error</span><p class="font-bold text-red-700">送信失敗</p><p class="text-red-600 text-xs">通信エラーが発生しました。時間をおいて再度お試しください。</p></div>';
+        status.className = 'text-center py-5 rounded-lg bg-red-50 border border-red-200';
     })
     .finally(function() {
         btn.disabled = false;
