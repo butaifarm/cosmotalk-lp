@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>多言語同時翻訳IP無線機 コスモトーク</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#135bec",
+                    "background-light": "#f6f6f8",
+                    "background-dark": "#101622",
+                },
+                fontFamily: {
+                    "display": ["Space Grotesk", "Noto Sans JP", "sans-serif"],
+                    "body": ["Noto Sans JP", "Noto Sans", "sans-serif"],
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+        },
+    }
+</script>
+<style>
+    body {
+        font-family: "Noto Sans JP", "Noto Sans", sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6, .font-display {
+        font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d121b] dark:text-[#f8f9fc] overflow-x-hidden">
+<!-- Navbar -->
+<nav class="sticky top-0 z-50 w-full bg-[#f8f9fc]/90 dark:bg-[#101622]/90 backdrop-blur-md border-b border-[#e7ebf3] dark:border-gray-800">
+<div class="px-4 md:px-10 py-3 flex items-center justify-between max-w-[1200px] mx-auto">
+<div class="flex items-center gap-2 md:gap-4 text-[#0d121b] dark:text-white min-w-0">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">rss_feed</span>
+</div>
+<h2 class="text-sm md:text-xl font-bold leading-tight tracking-[-0.015em] font-display whitespace-normal">多言語同時翻訳IP無線機</h2>
+</div>
+<a href="#contact" class="flex-shrink-0 flex cursor-pointer items-center justify-center rounded-lg h-10 px-4 md:px-6 bg-primary hover:bg-primary/90 transition-colors text-white text-xs md:text-sm font-bold leading-normal tracking-[0.015em]">
+<span>お問い合わせ</span>
+</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full">
+<div class="layout-container flex flex-col justify-center items-center">
+<div class="w-full max-w-[1200px] p-4 md:p-6 lg:p-10">
+<div class="relative w-full min-h-[400px] md:min-h-[560px] flex flex-col justify-end items-start rounded-xl overflow-hidden shadow-2xl">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlSC-WhYqTmLn1q6mOsv5U5Q9y78ht98ijU1hNZRyEf_OBvf05XXpaU_k0RT4p_rgYxZxG-kCgQaiCGlblAMlGWi6wdrHORAOAZwJ0KMHusiuWvlJSYbz_NcFsoTHMW9BHu7jvM2uh51CfcaGCQ6tVJLzmAj6n_2h_LUGHuip8lfvU6SE6CK44Kc-KesgTDJVp2-ajuuNHEzv3FcDalh5qf15WRq9DfIHPpVeiYblV4L5K2anRAObpBpOiaFpE9i3drMSXLjeplg');"></div>
+<!-- Overlay -->
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10"></div>
+<!-- Content -->
+<div class="relative z-20 p-6 md:p-12 lg:p-16 max-w-2xl flex flex-col gap-4 md:gap-6">
+<h1 class="text-white text-2xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight font-display">
+つながる安心を、<br/>すべての現場に。
+</h1>
+<div class="flex flex-col gap-3 text-white/90">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-base md:text-lg font-medium">全国どこでも通話可能</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">translate</span>
+<span class="text-base md:text-lg font-medium">31か国語への多言語同時翻訳</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="text-base md:text-lg font-medium">免許・資格不要</span>
+</div>
+</div>
+<div class="pt-4">
+<a href="#contact" class="inline-flex items-center justify-center rounded-lg h-14 px-8 bg-primary hover:bg-blue-600 transition-all text-white text-base font-bold shadow-lg hover:shadow-primary/50">
+<span>お問い合わせ</span>
+<span class="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Detailed Features -->
+<section class="py-16 px-4 md:px-10 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row gap-12 items-start">
+<div class="flex flex-col gap-4 flex-1">
+<h2 class="text-[#0d121b] dark:text-white text-3xl md:text-4xl font-bold leading-tight font-display">
+Key Features
+</h2>
+<p class="text-[#4c669a] dark:text-gray-400 text-lg max-w-md">
+利用シーンに合わせた多彩な機能で、ビジネスの現場を強力にサポートします。
+</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-[2]">
+<!-- Feature 1 -->
+<div class="flex flex-col gap-4 p-6 rounded-xl border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-[#1a202c] shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">cell_tower</span>
+</div>
+<div>
+<h3 class="text-[#0d121b] dark:text-white text-lg font-bold mb-2">広域通信</h3>
+<p class="text-[#4c669a] dark:text-gray-400 text-sm leading-relaxed">NTTドコモのLTEネットワークを利用し、全国エリアでクリアな通話が可能です。</p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="flex flex-col gap-4 p-6 rounded-xl border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-[#1a202c] shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">translate</span>
+</div>
+<div>
+<h3 class="text-[#0d121b] dark:text-white text-lg font-bold mb-2">多言語翻訳</h3>
+<p class="text-[#4c669a] dark:text-gray-400 text-sm leading-relaxed">31か国語に対応したAI自動翻訳機能で、外国人労働者ともスムーズに連携。</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="flex flex-col gap-4 p-6 rounded-xl border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-[#1a202c] shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">badge</span>
+</div>
+<div>
+<h3 class="text-[#0d121b] dark:text-white text-lg font-bold mb-2">免許不要</h3>
+<p class="text-[#4c669a] dark:text-gray-400 text-sm leading-relaxed">面倒な手続きや資格は一切不要。届いたその日からすぐに導入いただけます。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Table Section -->
+<section class="py-16 px-4 md:px-10 bg-white dark:bg-[#0b0f17]">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<h2 class="text-[#0d121b] dark:text-white text-3xl md:text-4xl font-bold tracking-tight font-display">Comparison</h2>
+<p class="text-[#4c669a] dark:text-gray-400">他製品との比較で、コスモトークの優位性をご確認ください。</p>
+</div>
+<div class="overflow-x-auto -mx-4 px-4">
+<table class="w-full min-w-[640px] border-collapse text-sm md:text-base">
+<thead>
+<tr>
+<th class="text-left p-3 md:p-4 bg-[#f6f6f8] dark:bg-[#1a202c] text-[#4c669a] dark:text-gray-400 font-bold rounded-tl-lg">比較項目</th>
+<th class="text-center p-3 md:p-4 bg-primary text-white font-bold">コスモトーク</th>
+<th class="text-center p-3 md:p-4 bg-[#f6f6f8] dark:bg-[#1a202c] text-[#0d121b] dark:text-white font-bold">翻訳専用デバイス</th>
+<th class="text-center p-3 md:p-4 bg-[#f6f6f8] dark:bg-[#1a202c] text-[#0d121b] dark:text-white font-bold rounded-tr-lg">従来型無線機</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e7ebf3] dark:divide-gray-700">
+<tr>
+<td class="p-3 md:p-4 font-bold text-[#0d121b] dark:text-white whitespace-nowrap">カテゴリ</td>
+<td class="p-3 md:p-4 text-center text-[#0d121b] dark:text-white">専用IP無線機＋翻訳</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">翻訳専用デバイス</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">業務用無線機</td>
+</tr>
+<tr class="bg-[#f6f6f8]/50 dark:bg-[#1a202c]/50">
+<td class="p-3 md:p-4 font-bold text-[#0d121b] dark:text-white whitespace-nowrap">通話距離</td>
+<td class="p-3 md:p-4 text-center font-bold text-primary">全国（ドコモ網）</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">対面のみ</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">基地局周辺のみ</td>
+</tr>
+<tr>
+<td class="p-3 md:p-4 font-bold text-[#0d121b] dark:text-white whitespace-nowrap">同時伝達人数</td>
+<td class="p-3 md:p-4 text-center font-bold text-primary">100台以上</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">基本1対1</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">制限あり</td>
+</tr>
+<tr class="bg-[#f6f6f8]/50 dark:bg-[#1a202c]/50">
+<td class="p-3 md:p-4 font-bold text-[#0d121b] dark:text-white whitespace-nowrap">多言語翻訳</td>
+<td class="p-3 md:p-4 text-center font-bold text-primary">31か国語同時翻訳</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">85〜92言語（順次翻訳）</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">なし</td>
+</tr>
+<tr>
+<td class="p-3 md:p-4 font-bold text-[#0d121b] dark:text-white whitespace-nowrap">専用端末</td>
+<td class="p-3 md:p-4 text-center text-[#0d121b] dark:text-white">あり（堅牢設計）</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">あり</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">あり</td>
+</tr>
+<tr class="bg-[#f6f6f8]/50 dark:bg-[#1a202c]/50">
+<td class="p-3 md:p-4 font-bold text-[#0d121b] dark:text-white whitespace-nowrap">GPS位置管理</td>
+<td class="p-3 md:p-4 text-center font-bold text-primary">標準搭載</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">なし</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">オプション</td>
+</tr>
+<tr>
+<td class="p-3 md:p-4 font-bold text-[#0d121b] dark:text-white whitespace-nowrap">免許・資格</td>
+<td class="p-3 md:p-4 text-center font-bold text-primary">不要</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">不要</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">必要</td>
+</tr>
+<tr class="bg-[#f6f6f8]/50 dark:bg-[#1a202c]/50">
+<td class="p-3 md:p-4 font-bold text-[#0d121b] dark:text-white whitespace-nowrap">混信</td>
+<td class="p-3 md:p-4 text-center font-bold text-primary">なし</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">—</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">あり</td>
+</tr>
+<tr>
+<td class="p-3 md:p-4 font-bold text-[#0d121b] dark:text-white whitespace-nowrap">山間部・トンネル</td>
+<td class="p-3 md:p-4 text-center font-bold text-primary">対応</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">—</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">不感地帯多い</td>
+</tr>
+<tr class="bg-[#f6f6f8]/50 dark:bg-[#1a202c]/50">
+<td class="p-3 md:p-4 font-bold text-[#0d121b] dark:text-white whitespace-nowrap">通信料</td>
+<td class="p-3 md:p-4 text-center font-bold text-primary">定額制</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">端末買い切り</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">—</td>
+</tr>
+<tr>
+<td class="p-3 md:p-4 font-bold text-[#0d121b] dark:text-white whitespace-nowrap">利用シーン</td>
+<td class="p-3 md:p-4 text-center text-[#0d121b] dark:text-white">現場間の多言語連携・防災</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">対面の会話・接客</td>
+<td class="p-3 md:p-4 text-center text-[#4c669a] dark:text-gray-400">近距離の業務連絡</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Video Gallery Section -->
+<section class="py-10 px-4 md:px-10 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<h2 class="text-[#0d121b] dark:text-white text-3xl font-bold tracking-tight font-display">Video Gallery</h2>
+<p class="text-[#4c669a] dark:text-gray-400">現場での活用事例や機能紹介を動画でご覧いただけます。</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Video Card: PR動画 -->
+<div class="group cursor-pointer" onclick="openVideoModal('無線機プロモーション.mp4')">
+<div class="relative aspect-video rounded-xl overflow-hidden bg-black mb-3">
+<video class="absolute inset-0 w-full h-full object-cover" preload="metadata" playsinline muted>
+<source src="無線機プロモーション.mp4" type="video/mp4"/>
+</video>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+</div>
+<h3 class="text-[#0d121b] dark:text-white font-bold text-lg group-hover:text-primary transition-colors">無線機プロモーション</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">コスモトーク製品紹介動画</p>
+</div>
+<!-- Video Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden bg-gray-200 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdSIA3hREN305PmQxoAbdcvrlKf-sfHR7VmZAIcv8JqKB05343n-kooBEcn0qIUBBIP6nx34sJFBG_pdcJP7mBSLC5ho9O2ZSK_loVSAu5O2Uj25RVhzmK-mrmlNpUFN0mmVmKdpFvlRoEMmyI7crDi5ZQ8gJjK6eRuIdqlp8KHYa6NYSyZ3EgBhS03WKFuPrzxo-OgdmdVuFtRcVdoKZ9_0BEOxk6Eq88K4yQBe4FwcFKc2_EH14UuW0jkBj6cd7oUu7lOauVYA');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-white text-xs font-bold">02:14</div>
+</div>
+<h3 class="text-[#0d121b] dark:text-white font-bold text-lg group-hover:text-primary transition-colors">Logistics Site Demo</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">物流倉庫での通信テスト</p>
+</div>
+<!-- Video Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden bg-gray-200 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDu4Yw_moryiridS_SevpE0Uzdmx4U3ZspwjamAJFqn2qUc5g6NbE6ZIqgpfRs2pOj0iO1mbGH5JDLnBls1Uv3qOuSKsZ3TyzlWLXnKRpx1qwPg8cQHj3GKlQdAYIh5srY_XObdvNOGLQ2zOJMtCfv-WxO6k3VlnzkUHSrSAahZmzUA5z4yIFXtB9w7wPEPJ3EDmI5ueMIn8ppXGG6FVh853383X5FDTv2zPGy5kjCchdEF__Hg26I-7FGBCimC6sDmJL1uS2gLWQ');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-white text-xs font-bold">01:45</div>
+</div>
+<h3 class="text-[#0d121b] dark:text-white font-bold text-lg group-hover:text-primary transition-colors">Translation Feature Test</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">31か国語翻訳機能の実演</p>
+</div>
+<!-- Video Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden bg-gray-200 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9akxwTyWzS9GbwOeCXZNLSeppa_AoQ33FXZ5-lBekhnmNnazYrAtR6o8R4uWdkQujlHq_7qne8qoJhkpMDwZQe-MQqicIIpvutLgHSq_iXFf4k5nBapHmddC8jAvpzxvGw6EvZ22vEbffKkXx_lT3SqA8iXb_s0jDfmpmZdftFXYAL43trQ1GiLSC1nvR96JflZ6Dh__BVczc6RYRr3hA5a3L9BgFXNE1k3TnpSi05iwQWXzc29ZIb1bFrM0FQv8qmtg7KNw5MA');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-white text-xs font-bold">03:20</div>
+</div>
+<h3 class="text-[#0d121b] dark:text-white font-bold text-lg group-hover:text-primary transition-colors">Durability Test</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">過酷な環境下での耐久試験</p>
+</div>
+<!-- Video Card 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden bg-gray-200 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_k2KzkN3eh6Z1Q7U9R90uarmYstM6mB7Cu_OiAYQ4ir3Dm0TDAUdE3Kx-saX-YVEY7uJMyLHTZWz2f5jDl-oLdxgM4VIM8AGbhmBB4OC4KGGSrfExTxp5zuOVGcdelNetVtjPVWvHP2wgHxdeRNyvnU0WerXZqTs91O_G87sKimD0UqHBrNN-WBH60m5bnvSxJhueX6Ws3ZdtbXM8xzTlSbeP1mwogmeBx6ZS2698UO2GvRfDWevksdoGDn7eb-ueBWzM-R0IBA');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-white text-xs font-bold">04:10</div>
+</div>
+<h3 class="text-[#0d121b] dark:text-white font-bold text-lg group-hover:text-primary transition-colors">Factory Workflow</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">工場ラインでの導入事例</p>
+</div>
+<!-- Video Card 5 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden bg-gray-200 mb-3">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDh4VDQqYI_R6CjlIX3N7pWTR-z1ibllc5eMLcVWA13sdI66Plnm3WnCVHzxMBPJ4cBFROIMFofzN0-EIadGtNM7Ah7fRZvgZ3Yro-dSc9S7gRqdd5sO-exB-3wfz2sBhaQZ68wWDMdnOxWxqPqGBC7VNeAAXp1NHZ36Ih8P1G__PUVnrTxs9Hy9Ame6WoRvKLNoQimKMqgikePq8rScAPvfeH5JAb2I46Lk84Szqlv41z997uq4_SSKOnZRLCqR1b62naql0wjlg');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-white text-xs font-bold">02:55</div>
+</div>
+<h3 class="text-[#0d121b] dark:text-white font-bold text-lg group-hover:text-primary transition-colors">Civil Engineering</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">土木現場での広域通信活用</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Inquiry Form Section -->
+<section id="contact" class="py-20 px-4 md:px-10 bg-background-light dark:bg-background-dark">
+<div class="max-w-[800px] mx-auto">
+<div class="bg-white dark:bg-[#1a202c] rounded-2xl p-5 md:p-12 shadow-xl border border-gray-100 dark:border-gray-800">
+<div class="text-center mb-10">
+<h2 class="text-3xl font-bold text-[#0d121b] dark:text-white mb-4 font-display">Contact Us</h2>
+<p class="text-[#4c669a] dark:text-gray-400">導入のご相談、お見積もりなど、お気軽にお問い合わせください。</p>
+</div>
+<form id="contactForm" class="flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">氏名 (Name)</label>
+<input id="formName" class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-transparent px-4 text-[#0d121b] dark:text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-gray-400" placeholder="山田 太郎" type="text" required/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">会社名 (Company Name)</label>
+<input id="formCompany" class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-transparent px-4 text-[#0d121b] dark:text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-gray-400" placeholder="株式会社Cosmo" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">メールアドレス (Email)</label>
+<input id="formEmail" class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-transparent px-4 text-[#0d121b] dark:text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-gray-400" placeholder="example@company.com" type="email" required/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">電話番号 (Phone Number)</label>
+<input id="formPhone" class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-transparent px-4 text-[#0d121b] dark:text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-gray-400" placeholder="03-1234-5678" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">お問い合わせ内容 (Message)</label>
+<textarea id="formMessage" class="w-full rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-transparent p-4 text-[#0d121b] dark:text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none placeholder:text-gray-400" placeholder="ご質問やご要望をご記入ください..." rows="4" required></textarea>
+</div>
+<div id="formStatus" class="hidden text-center py-3 rounded-lg text-sm font-bold"></div>
+<div class="pt-4 flex justify-center">
+<button id="submitBtn" class="min-w-[200px] h-12 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold text-lg shadow-lg hover:shadow-primary/50 transition-all" type="submit">
+送信する
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Video Modal -->
+<div id="videoModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm" onclick="closeVideoModal(event)">
+<div class="relative w-full max-w-4xl mx-4" onclick="event.stopPropagation()">
+<button onclick="closeVideoModal()" class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="aspect-video rounded-xl overflow-hidden bg-black shadow-2xl">
+<video id="modalVideo" class="w-full h-full" controls playsinline>
+</video>
+</div>
+</div>
+</div>
+<script>
+function openVideoModal(src) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    video.src = src;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    video.play();
+}
+function closeVideoModal(e) {
+    if (e && e.target !== document.getElementById('videoModal')) return;
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    video.pause();
+    video.src = '';
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+}
+</script>
+<!-- Contact Form Script -->
+<script>
+// Google Apps Script WebApp URL（デプロイ後に差し替えてください）
+var GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzbuVymIOc1BCwos2Y-Fa0ClShwTtZYmK7z5H9bFfBNw86qcsfWRudidRowQBdSM6l-/exec";
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var btn = document.getElementById('submitBtn');
+    var status = document.getElementById('formStatus');
+
+    // 送信中の状態
+    btn.disabled = true;
+    btn.textContent = '送信中...';
+    status.classList.add('hidden');
+
+    var data = {
+        name: document.getElementById('formName').value,
+        company: document.getElementById('formCompany').value,
+        email: document.getElementById('formEmail').value,
+        phone: document.getElementById('formPhone').value,
+        message: document.getElementById('formMessage').value
+    };
+
+    fetch(GAS_WEBAPP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(function() {
+        // no-cors ではレスポンスが読めないため、送信成功として扱う
+        status.textContent = '送信が完了しました。お問い合わせありがとうございます。';
+        status.className = 'text-center py-3 rounded-lg text-sm font-bold text-green-600 bg-green-50 border border-green-200';
+        document.getElementById('contactForm').reset();
+    })
+    .catch(function() {
+        status.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
+        status.className = 'text-center py-3 rounded-lg text-sm font-bold text-red-600 bg-red-50 border border-red-200';
+    })
+    .finally(function() {
+        btn.disabled = false;
+        btn.textContent = '送信する';
+    });
+});
+</script>
+<!-- Footer -->
+<footer class="bg-[#0b0f17] text-white py-12 px-4 md:px-10 border-t border-gray-800">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">rss_feed</span>
+<h3 class="text-xl font-bold font-display">多言語同時翻訳IP無線機</h3>
+</div>
+<p class="text-gray-400 text-sm">コスモトーク / Cosmo Talk</p>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-4 md:gap-8 text-sm text-gray-400">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Company Profile</a>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-10 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
+&copy; 2025 Cosmo Talk / コスモトーク. All rights reserved.
+</div>
+</footer>
+</body></html>
