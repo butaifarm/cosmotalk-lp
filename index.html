@@ -278,10 +278,31 @@
 <div class="max-w-[800px] mx-auto">
 <div class="bg-white dark:bg-[#1a202c] rounded-2xl p-5 md:p-12 shadow-xl border border-gray-100 dark:border-gray-800">
 <div class="text-center mb-10">
-<h2 class="text-3xl font-bold text-[#0d121b] dark:text-white mb-4 font-display">お問い合わせ</h2>
-<p class="text-[#4c669a] dark:text-gray-400">導入のご相談、お見積もりなど、お気軽にお問い合わせください。</p>
+<h2 class="text-3xl font-bold text-[#0d121b] dark:text-white mb-4 font-display">お問い合わせ・資料請求</h2>
+<p class="text-[#4c669a] dark:text-gray-400">導入のご相談、お見積もり、資料請求など、お気軽にお問い合わせください。</p>
 </div>
 <form id="contactForm" class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">お問い合わせ種別</label>
+<div class="flex flex-wrap gap-4">
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="radio" name="inquiry_type" value="資料請求" class="w-4 h-4 text-primary border-[#cfd7e7] focus:ring-primary" checked/>
+<span class="text-sm text-[#0d121b] dark:text-white">資料請求</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="radio" name="inquiry_type" value="導入相談" class="w-4 h-4 text-primary border-[#cfd7e7] focus:ring-primary"/>
+<span class="text-sm text-[#0d121b] dark:text-white">導入相談</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="radio" name="inquiry_type" value="見積もり依頼" class="w-4 h-4 text-primary border-[#cfd7e7] focus:ring-primary"/>
+<span class="text-sm text-[#0d121b] dark:text-white">見積もり依頼</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="radio" name="inquiry_type" value="その他" class="w-4 h-4 text-primary border-[#cfd7e7] focus:ring-primary"/>
+<span class="text-sm text-[#0d121b] dark:text-white">その他</span>
+</label>
+</div>
+</div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col gap-2">
 <label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">氏名</label>
@@ -350,7 +371,7 @@ function closeVideoModal(e) {
 <!-- Contact Form Script -->
 <script>
 // Google Apps Script WebApp URL（デプロイ後に差し替えてください）
-var GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzbuVymIOc1BCwos2Y-Fa0ClShwTtZYmK7z5H9bFfBNw86qcsfWRudidRowQBdSM6l-/exec";
+var GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwspmw4--LGUzuMzKvfIKCy6ds2xi8wmO5DsbmECSW6Smk1LsOLU3N60lRCacy0x3rQ/exec";
 
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -364,6 +385,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     status.classList.add('hidden');
 
     var data = {
+        inquiry_type: document.querySelector('input[name="inquiry_type"]:checked').value,
         name: document.getElementById('formName').value,
         company: document.getElementById('formCompany').value,
         email: document.getElementById('formEmail').value,
