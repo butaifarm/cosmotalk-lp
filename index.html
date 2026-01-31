@@ -9,8 +9,8 @@
 <meta property="og:title" content="多言語同時翻訳IP無線機 コスモトーク"/>
 <meta property="og:description" content="全国対応IP無線 × 31か国語同時翻訳。外国人スタッフとのコミュニケーションをコスモトークが解決します。"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://butaifarm.github.io/cosmotalk-lp/"/>
-<meta property="og:image" content="https://butaifarm.github.io/cosmotalk-lp/ogp.png"/>
+<meta property="og:url" content="https://cosmotalk-lp.pages.dev/"/>
+<meta property="og:image" content="https://cosmotalk-lp.pages.dev/ogp.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:site_name" content="コスモトーク"/>
@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="多言語同時翻訳IP無線機 コスモトーク"/>
 <meta name="twitter:description" content="全国対応IP無線 × 31か国語同時翻訳。外国人スタッフとのコミュニケーションをコスモトークが解決します。"/>
-<meta name="twitter:image" content="https://butaifarm.github.io/cosmotalk-lp/ogp.png"/>
+<meta name="twitter:image" content="https://cosmotalk-lp.pages.dev/ogp.png"/>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -259,17 +259,8 @@
 <div class="flex flex-col gap-2 text-center">
 <h2 class="text-[#0d121b] dark:text-white text-3xl md:text-4xl font-bold tracking-tight font-display">ご紹介動画</h2>
 </div>
-<div class="aspect-video rounded-xl overflow-hidden bg-black shadow-2xl cursor-pointer" onclick="openVideoModal('無線機プロモーション.mp4')">
-<div class="relative w-full h-full group">
-<video class="w-full h-full object-cover" preload="metadata">
-<source src="無線機プロモーション.mp4" type="video/mp4"/>
-</video>
-<div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
-<div class="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-white text-4xl ml-1">play_arrow</span>
-</div>
-</div>
-</div>
+<div class="aspect-video rounded-xl overflow-hidden shadow-2xl">
+<iframe class="w-full h-full" src="https://www.youtube.com/embed/tjpogG_zKMQ" title="コスモトーク ご紹介動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </div>
 </section>
@@ -337,37 +328,6 @@
 </div>
 </div>
 </section>
-<!-- Video Modal -->
-<div id="videoModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm" onclick="closeVideoModal(event)">
-<div class="relative w-full max-w-4xl mx-4" onclick="event.stopPropagation()">
-<button onclick="closeVideoModal()" class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors">
-<span class="material-symbols-outlined text-4xl">close</span>
-</button>
-<div class="aspect-video rounded-xl overflow-hidden bg-black shadow-2xl">
-<video id="modalVideo" class="w-full h-full" controls playsinline>
-</video>
-</div>
-</div>
-</div>
-<script>
-function openVideoModal(src) {
-    const modal = document.getElementById('videoModal');
-    const video = document.getElementById('modalVideo');
-    video.src = src;
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    video.play();
-}
-function closeVideoModal(e) {
-    if (e && e.target !== document.getElementById('videoModal')) return;
-    const modal = document.getElementById('videoModal');
-    const video = document.getElementById('modalVideo');
-    video.pause();
-    video.src = '';
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-}
-</script>
 <!-- Contact Form Script -->
 <script>
 // Google Apps Script WebApp URL（デプロイ後に差し替えてください）
