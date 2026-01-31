@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コスモトーク FAQ | 株式会社舞台ファーム</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a7a8e;
+            --primary-dark: #125563;
+            --primary-light: #2a9aae;
+            --accent-color: #FFD700;
+            --accent-hover: #FFC700;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --shadow: 0 4px 20px rgba(26, 122, 142, 0.1);
+            --shadow-hover: 0 8px 30px rgba(26, 122, 142, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background: linear-gradient(135deg, #e8f4f6 0%, #ffffff 50%, #fff9e6 100%);
+            min-height: 100vh;
+        }
+
+        /* ヘッダー */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .product-logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-logo span {
+            color: var(--accent-color);
+        }
+
+        .company-name {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* メインコンテンツ */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* FAQ セクション */
+        .faq-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        /* カテゴリー別セクション */
+        .category-section {
+            margin-bottom: 2rem;
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        /* FAQ アイテム */
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, var(--bg-white) 0%, #f0fafb 100%);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .faq-question::before {
+            content: 'Q';
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, #f0fafb 0%, #e0f7fa 100%);
+        }
+
+        .faq-question-text {
+            flex: 1;
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            padding-left: 3rem;
+        }
+
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 2rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem 2rem 2rem 2rem;
+        }
+
+        .faq-answer-content {
+            position: relative;
+            padding-left: 3rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .faq-answer-content::before {
+            content: 'A';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            font-weight: 900;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .faq-answer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer a:hover {
+            color: var(--primary-dark);
+            border-bottom-color: var(--primary-color);
+        }
+
+        /* お問い合わせフォームセクション */
+        .contact-section {
+            background: var(--bg-white);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .contact-section .section-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-description {
+            font-size: 1.05rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .form-container iframe {
+            border: none;
+            width: 100%;
+            min-height: 800px;
+            border-radius: 8px;
+        }
+
+        /* フッター */
+        footer {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-info strong {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 1rem;
+            }
+
+            .product-logo {
+                font-size: 2rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .category-title {
+                font-size: 1.1rem;
+            }
+
+            .faq-question {
+                padding: 1.2rem 1rem;
+            }
+
+            .faq-question-text {
+                font-size: 0.95rem;
+                padding-left: 2.5rem;
+            }
+
+            .faq-question::before,
+            .faq-answer-content::before {
+                width: 28px;
+                height: 28px;
+                font-size: 1rem;
+                left: 0.8rem;
+            }
+
+            .faq-answer-content {
+                padding-left: 2.5rem;
+                font-size: 0.9rem;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 1.2rem 1rem 1.5rem 1rem;
+            }
+
+            .contact-section {
+                padding: 2rem 1rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+
+        /* スムーズスクロール */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ローディングアニメーション */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="product-logo">COSMO<span>TALK</span></div>
+            </div>
+            <h1>よくあるご質問（FAQ）</h1>
+            <p class="subtitle">IP無線機「コスモトーク」に関するお客様からのご質問にお答えします</p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="container">
+        <!-- FAQ セクション -->
+        <section class="faq-section fade-in">
+            <h2 class="section-title">よくあるご質問</h2>
+
+            <!-- 使用方法 -->
+            <div class="category-section">
+                <h3 class="category-title">使用方法</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-question-text">無線機の使用方法・設定方法が分かりません。</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            下記マニュアルを参照ください。<br>
+                            <a href="https://drive.google.com/file/d/1Ea7-a2TaGDIrd7it5TnNGbaQzarI2tJw/view?usp=sharing" target="_blank" rel="noopener noreferrer">使用マニュアルを開く →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 故障に関して -->
+            <div class="category-section">
+                <h3 class="category-title">故障に関して</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-question-text">機器が不具合を起こしました。どうすれば良いですか?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            下記フォームから、販売代理店にお問い合わせください。<br>
+                            <a href="https://forms.gle/cx6hE8yKmo6UfHnKA" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 保証に関して -->
+            <div class="category-section">
+                <h3 class="category-title">保証に関して</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-question-text">機器故障の際に保証はありますか?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            保証期間は引渡日から1年間です。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 契約変更 -->
+            <div class="category-section">
+                <h3 class="category-title">契約変更</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-question-text">無線機の台数を増やしたい場合、どうすればいいですか?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            下記フォームからお問い合わせください。<br>
+                            <a href="https://forms.gle/cx6hE8yKmo6UfHnKA" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-question-text">無線機の利用台数を減らしたい場合、どうすればいいですか?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            下記フォームからお問い合わせください。<br>
+                            <a href="https://forms.gle/cx6hE8yKmo6UfHnKA" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 解約 -->
+            <div class="category-section">
+                <h3 class="category-title">解約</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-question-text">無線機の利用を停止する場合、どうすればいいですか?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            下記フォームからお問い合わせください。<br>
+                            <a href="https://forms.gle/cx6hE8yKmo6UfHnKA" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 支払いに関して -->
+            <div class="category-section">
+                <h3 class="category-title">支払いに関して</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-question-text">月額の利用料金はどのように支払われますか?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            お支払い方法については、別途ご案内させていただきます。詳しくは下記お問い合わせフォームよりご連絡ください。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせフォーム -->
+        <section class="contact-section fade-in">
+            <h2 class="section-title">その他のお問い合わせ</h2>
+            <p class="contact-description">
+                上記のFAQで解決しない場合は、下記のフォームからお気軽にお問い合わせください。<br>
+                担当者が迅速に対応させていただきます。
+            </p>
+            <div class="form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScxzdiN633llhZnV_a4p3wNOiFGhlZsgakuPcgg9sSQxDbQUg/viewform?embedded=true" width="640" height="640" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <strong>IP無線機コスモトーク正規代理店</strong><br>
+                <a href="https://butaifarm.com" target="_blank" rel="noopener noreferrer">株式会社舞台ファーム</a></br>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // 他のアクティブなFAQを閉じる（オプション: 複数開くことを許可する場合はコメントアウト）
+            // document.querySelectorAll('.faq-item.active').forEach(item => {
+            //     if (item !== faqItem) {
+            //         item.classList.remove('active');
+            //     }
+            // });
+            
+            // クリックされたFAQのトグル
+            faqItem.classList.toggle('active');
+        }
+
+        // ページロード時のアニメーション
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
