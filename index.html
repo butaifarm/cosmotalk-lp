@@ -310,6 +310,10 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">役職名</label>
+<input id="formPosition" class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-transparent px-4 text-[#0d121b] dark:text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-gray-400" placeholder="部長" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
 <label class="text-sm font-bold text-[#0d121b] dark:text-gray-300">メールアドレス</label>
 <input id="formEmail" class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-transparent px-4 text-[#0d121b] dark:text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-gray-400" placeholder="example@company.com" type="email" required/>
 </div>
@@ -331,7 +335,7 @@
 <!-- Contact Form Script -->
 <script>
 // Google Apps Script WebApp URL（デプロイ後に差し替えてください）
-var GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxULmnJbp5ZCms7vWMDKNSS7Nbb4JS89H4cSQj1nmsttTkz6j4bG6spY_0F2tuKyqcN/exec";
+var GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwQ2OSoEceINdM4PZ280H7-ckm_fQGgSJ6UrjqSXHZkau_wIUKwne-d59eGNHFkX4lO/exec";
 
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -358,6 +362,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         inquiry_type: items.join('、'),
         name: document.getElementById('formName').value,
         company: document.getElementById('formCompany').value,
+        position: document.getElementById('formPosition').value,
         email: document.getElementById('formEmail').value,
         phone: document.getElementById('formPhone').value,
         message: ''

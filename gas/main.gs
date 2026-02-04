@@ -24,7 +24,7 @@ function setup() {
     sheet = ss.insertSheet(SHEET_NAME);
   }
 
-  var headers = ["受信日時", "ご希望内容", "氏名", "会社名", "メールアドレス", "電話番号"];
+  var headers = ["受信日時", "ご希望内容", "氏名", "会社名", "役職名", "メールアドレス", "電話番号"];
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
   sheet.getRange(1, 1, 1, headers.length).setFontWeight("bold");
   sheet.setFrozenRows(1);
@@ -47,13 +47,14 @@ function doPost(e) {
     var inquiryType = data.inquiry_type || "お問い合わせ";
     var name = data.name || "";
     var company = data.company || "";
+    var position = data.position || "";
     var email = data.email || "";
     var phone = data.phone || "";
     var message = data.message || "";
     var timestamp = new Date();
 
-    writeToSheet(timestamp, inquiryType, name, company, email, phone, message);
-    sendSlackNotification(timestamp, inquiryType, name, company, email, phone, message);
+    writeToSheet(timestamp, inquiryType, name, company, position, email, phone, message);
+    sendSlackNotification(timestamp, inquiryType, name, company, position, email, phone, message);
 
     return ContentService
       .createTextOutput(JSON.stringify({ result: "success" }))
@@ -69,7 +70,7 @@ function doPost(e) {
 /**
  * スプレッドシートにデータを書き込む
  */
-function writeToSheet(timestamp, inquiryType, name, company, email, phone, message) {
+function writeToSheet(timestamp, inquiryType, name, company, position, email, phone, message) {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName(SHEET_NAME);
 
@@ -79,13 +80,13 @@ function writeToSheet(timestamp, inquiryType, name, company, email, phone, messa
   }
 
   var formattedDate = Utilities.formatDate(timestamp, "Asia/Tokyo", "yyyy/MM/dd HH:mm:ss");
-  sheet.appendRow([formattedDate, inquiryType, name, company, email, phone]);
+  sheet.appendRow([formattedDate, inquiryType, name, company, position, email, phone]);
 }
 
 /**
  * Slack通知を送信する
  */
-function sendSlackNotification(timestamp, inquiryType, name, company, email, phone, message) {
+function sendSlackNotification(timestamp, inquiryType, name, company, position, email, phone, message) {
   var SLACK_WEBHOOK_URL = getSlackWebhookUrl();
   if (!SLACK_WEBHOOK_URL) {
     Logger.log("Slack Webhook URLが未設定です");
@@ -116,6 +117,7 @@ function sendSlackNotification(timestamp, inquiryType, name, company, email, pho
         fields: [
           { type: "mrkdwn", text: "*氏名:*\n" + name },
           { type: "mrkdwn", text: "*会社名:*\n" + company },
+          { type: "mrkdwn", text: "*役職名:*\n" + position },
           { type: "mrkdwn", text: "*メール:*\n" + email },
           { type: "mrkdwn", text: "*電話番号:*\n" + phone }
         ]
